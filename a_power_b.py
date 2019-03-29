@@ -1,10 +1,35 @@
-def a_power_b(x,y):
- contador=1
- for i in range (0,y):
-  contador=contador*x
- return contador  
-x=int(input("Digite un numero"))
-y=int(input("Digite un numero o muere"))
+def a_power_b (a,b):
+  cont=1
+  
+  for i in range (0,b):
+    
+    if i>=1000:
+      raise(  StopIteration ("Error en el valor"))
+    
+    cont=cont*a
+  
+  return cont
+  
 
-efe=a_power_b(x,y)
-print(efe)
+while True:
+  
+  try:
+  
+    x=int(input("Ingrese la base "))
+    
+    if x== 0:
+      print("Nos vemos!")
+      break
+    
+    y=int(input("Ingrese el exponente "))
+    ac= a_power_b(x,y)
+    print(ac)
+  
+  except StopIteration:
+     print("Es demasiado grande")
+    
+  except ValueError:
+      print("No se permiten letras")
+  
+  except:
+      print("Error no conocido")
